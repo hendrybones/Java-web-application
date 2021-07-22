@@ -59,12 +59,16 @@ public class Main {
         System.out.print("advancedFileCopy:" + " " +totalTime);
 
     }
-
-    public static void main(String[] args) throws IOException {
-
+    private  static void performanceFileCopy() throws IOException {
         simpleFileCopy();
         LargeFIle();
         advancedFileCopy();
+
+    }
+
+    public static void main(String[] args) throws IOException {
+
+
 
 
     }
