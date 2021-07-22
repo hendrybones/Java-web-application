@@ -6,12 +6,12 @@ public class Question2 {
         int noOfLoops = 6;
 
         for (r = 0; r < noOfLoops; r++) {
-            if (r>=1){
-                System.out.print(" ");
-            } else{
-                System.out.print("     ");
-
-            }
+//            if (r>=1){
+//                System.out.print(" ");
+//            } else{
+//                System.out.print("     ");
+//
+//            }
 
             //space
             for (c = noOfLoops - r; c > 1; c--) {
