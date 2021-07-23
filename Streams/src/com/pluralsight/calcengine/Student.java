@@ -73,43 +73,4 @@ public class Student {
                 '}';
     }
 
-    public static void main(String[] args) throws ParseException {
-        Scanner scanner=new Scanner(System.in);
-
-
-        System.out.println("enter registration no");
-        String regNo=scanner.nextLine();
-
-
-        System.out.println("enter your course");
-        String course=scanner.nextLine();
-
-        System.out.println("enter your gender (male or female)");
-        String gender=scanner.nextLine();
-        Gender g=Gender.valueOf(gender);
-
-
-        System.out.println("enter date of birth");
-        String date=scanner.nextLine();
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd-MM-yyyy");
-        Date dateOfBirth=simpleDateFormat.parse(date);
-
-
-
-
-        System.out.println("enter date of Admission ");
-        String da=scanner.nextLine();
-        SimpleDateFormat DateFormat=new SimpleDateFormat("dd-MM-yyyy");
-        Date dateOfAdmission=DateFormat.parse(da);
-
-
-
-        Student s=new Student(regNo,g,dateOfBirth,course,dateOfAdmission);
-        System.out.println(s);
-
-
-
-
-
-    }
 }
