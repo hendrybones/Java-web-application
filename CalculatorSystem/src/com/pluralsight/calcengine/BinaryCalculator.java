@@ -7,39 +7,43 @@ public class BinaryCalculator extends ScientificCalculator implements BinaryInte
 
 
     public BinaryCalculator() {
-        this.person=new MiddlePerson();
+        this.person = new MiddlePerson();
 
 
     }
 
 
-    public double add(double a, double b){
-        BigInteger number1= new BigInteger(String.valueOf(a),2);
-        BigInteger number2= new BigInteger(String.valueOf(b),2);
-        BigInteger sum=number2.add(number1);
-        return Double.parseDouble(sum.toString((2)));
-    }
-    public double subTract(double a,double b){
-        BigInteger number1= new BigInteger(String.valueOf(a),2);
-        BigInteger number2= new BigInteger(String.valueOf(b),2);
-        BigInteger sum=number2.subtract(number1);
-        return Double.parseDouble(sum.toString((2)));
-    }
-    public double multi(double a,double b){
-        BigInteger number1= new BigInteger(String.valueOf(a),2);
-        BigInteger number2= new BigInteger(String.valueOf(b),2);
-        BigInteger sum=number2.multiply(number1);
-        return Double.parseDouble(sum.toString((2)));
-    }
-    public double divide(double a,double b){
-        BigInteger number1= new BigInteger(String.valueOf(a),2);
-        BigInteger number2= new BigInteger(String.valueOf(b),2);
-        BigInteger sum=number2.divide(number1);
-
-        //Integer.parseInt(a,2);
-//        int number2=Integer.parseInt(b,2);
-//        int sum=number2.div;
+    public String add(String a, String b) {
 //
-        return Double.parseDouble(sum.toString((2)));
+        int number1=Integer.parseInt(b,2);
+        int number2=Integer.parseInt(b,2);
+        int sum=number1 + number2;
+        return Integer.toBinaryString(sum);
     }
-}
+
+    public String subTract(String a, String b) {
+        int number1=Integer.parseInt(b,2);
+        int number2=Integer.parseInt(b,2);
+        int sum=number1 - number2;
+        return Integer.toBinaryString(sum);
+//        BigInteger number1 = new BigInteger(String.valueOf(a), 2);
+//        BigInteger number2 = new BigInteger(String.valueOf(b), 2);
+//        BigInteger sum = number2.subtract(number1);
+//        return Integer.toBinaryString(2);
+    }
+
+    public String multi(String a, String b) {
+        int number1 = Integer.parseInt(b, 2);
+        int number2 = Integer.parseInt(b, 2);
+        int sum = number1 * number2;
+        return Integer.toBinaryString(sum);
+
+    }
+    public String divide (String a, String b){
+            int number1 = Integer.parseInt(b, 2);
+            int number2 = Integer.parseInt(b, 2);
+            int sum = number1 / number2;
+            return Integer.toBinaryString(sum);
+        }
+    }
+

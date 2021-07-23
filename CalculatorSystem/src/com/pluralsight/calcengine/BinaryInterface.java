@@ -1,10 +1,10 @@
 package com.pluralsight.calcengine;
 
 public interface BinaryInterface {
-    public double add(double a,double b);
-    public double subTract(double a,double b);
-    public double multi(double a,double b);
-    public double divide(double a,double b);
+    public String add(String a,String b);
+    public String subTract(String a,String b);
+    public String multi(String a,String b);
+    public String divide(String a,String b);
 
 
 }
