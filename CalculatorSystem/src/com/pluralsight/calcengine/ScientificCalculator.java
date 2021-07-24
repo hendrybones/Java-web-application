@@ -2,16 +2,34 @@ package com.pluralsight.calcengine;
 
 public class ScientificCalculator extends AdvancedCalculator{
     private  BinaryCalculator binaryCalculator;
+    private  HexDecimal hexDecimal;
     private double a;
 
-    public ScientificCalculator(double a) {
+    public ScientificCalculator(BinaryCalculator binaryCalculator, HexDecimal hexDecimal, double a) {
+        this.binaryCalculator = binaryCalculator;
+        this.hexDecimal = hexDecimal;
         this.a = a;
-        this.binaryCalculator=new BinaryCalculator();
-
     }
 
     public ScientificCalculator() {
 
+    }
+
+
+    public BinaryCalculator getBinaryCalculator() {
+        return binaryCalculator;
+    }
+
+    public void setBinaryCalculator(BinaryCalculator binaryCalculator) {
+        this.binaryCalculator = binaryCalculator;
+    }
+
+    public HexDecimal getHexDecimal() {
+        return hexDecimal;
+    }
+
+    public void setHexDecimal(HexDecimal hexDecimal) {
+        this.hexDecimal = hexDecimal;
     }
 
     public double getA() {
@@ -26,6 +44,8 @@ public class ScientificCalculator extends AdvancedCalculator{
     public String toString() {
         return "ScientificCalculator{" +
                 "b=" + b +
+                ", binaryCalculator=" + binaryCalculator +
+                ", hexDecimal=" + hexDecimal +
                 ", a=" + a +
                 '}';
     }

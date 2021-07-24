@@ -2,24 +2,29 @@ package com.pluralsight.calcengine;
 
 import java.math.BigInteger;
 
-public class HexDecimal extends BinaryCalculator implements BinaryInterface{
-    private  MiddlePerson person;
+public class HexDecimal implements BinaryInterface{
+    private String a;
+    private String b;
 
-
-
-    public HexDecimal() {
-
-        this.person = new MiddlePerson();
-
+    public HexDecimal(String a, String b) {
+        this.a = a;
+        this.b = b;
     }
 
+    public String getA() {
+        return a;
+    }
 
-    @Override
-    public String toString() {
-        return "HexDecimal{" +
-                "a='" +this.person.getA() + '\'' +
-                ", b='" +this.person.getB() + '\'' +
-                '}';
+    public void setA(String a) {
+        this.a = a;
+    }
+
+    public String getB() {
+        return b;
+    }
+
+    public void setB(String b) {
+        this.b = b;
     }
 
     // calculate methods
