@@ -5,22 +5,15 @@ public class ScientificCalculator extends AdvancedCalculator{
     private  HexDecimal hexDecimal;
     private double a;
 
-    public ScientificCalculator(BinaryCalculator binaryCalculator, HexDecimal hexDecimal, double a) {
-        this.binaryCalculator = binaryCalculator;
-        this.hexDecimal = hexDecimal;
-        this.a = a;
-    }
-
-    public ScientificCalculator() {
-
-    }
 
 
     public BinaryCalculator getBinaryCalculator() {
+
         return binaryCalculator;
     }
 
     public void setBinaryCalculator(BinaryCalculator binaryCalculator) {
+
         this.binaryCalculator = binaryCalculator;
     }
 
@@ -29,21 +22,24 @@ public class ScientificCalculator extends AdvancedCalculator{
     }
 
     public void setHexDecimal(HexDecimal hexDecimal) {
+
         this.hexDecimal = hexDecimal;
     }
 
     public double getA() {
+
         return a;
     }
 
     public void setA(double a) {
+
         this.a = a;
     }
 
     @Override
     public String toString() {
         return "ScientificCalculator{" +
-                "b=" + b +
+                "b=" + b+
                 ", binaryCalculator=" + binaryCalculator +
                 ", hexDecimal=" + hexDecimal +
                 ", a=" + a +

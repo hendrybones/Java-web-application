@@ -10,6 +10,7 @@ public class HexDecimal implements BinaryInterface{
         this.a = a;
         this.b = b;
     }
+    public HexDecimal(){}
 
     public String getA() {
         return a;
