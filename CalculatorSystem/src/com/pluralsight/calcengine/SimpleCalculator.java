@@ -17,31 +17,7 @@ public class SimpleCalculator {
     public double divide(double a, double b){
         return a /  b;
     }
-//    public Double add(String a, String b){
-//        double d1=Double.parseDouble(a);
-//        double d2=Double.parseDouble(b);
-//
-//        return d1 + d2;
-//    }
-//    public  Double subtract(String a, String b){
-//        double d1=Double.parseDouble(a);
-//        double d2=Double.parseDouble(b);
-//
-//        return d1 - d2;
-//
-//    }
-//    public  Double multi(String a, String b){
-//        double d1=Double.parseDouble(a);
-//        double d2=Double.parseDouble(b);
-//        return d1 * d2;
-//
-//    }
-//    public  Double divide(String a, String b) {
-//        double d1=Double.parseDouble(a);
-//        double d2=Double.parseDouble(b);
-//        return d1 - d2;
-//    }
-//
+
 
 
 }
