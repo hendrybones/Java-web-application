@@ -1,39 +1,10 @@
 package com.pluralsight.calcengine;
 
-import java.math.BigInteger;
+import com.pluralsight.calcengine.Interface.BinaryInterface;
 
-public class BinaryCalculator implements BinaryInterface{
+public class BinaryCalculator implements BinaryInterface {
     private String a;
     private String b;
-
-    public BinaryCalculator(String a, String b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    public BinaryCalculator() {
-
-    }
-
-    public String getA() {
-
-        return a;
-    }
-
-    public void setA(String a) {
-
-        this.a = a;
-    }
-
-    public String getB() {
-
-        return b;
-    }
-
-    public void setB(String b) {
-
-        this.b = b;
-    }
 
     public String add(String a, String b) {
 //

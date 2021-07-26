@@ -1,50 +1,11 @@
 package com.pluralsight.calcengine;
 
-public class ScientificCalculator extends AdvancedCalculator{
+import com.pluralsight.calcengine.Interface.BinaryInterface;
+
+public class ScientificCalculator extends AdvancedCalculator  {
     private  BinaryCalculator binaryCalculator;
     private  HexDecimal hexDecimal;
     private double a;
-
-
-
-    public BinaryCalculator getBinaryCalculator() {
-
-        return binaryCalculator;
-    }
-
-    public void setBinaryCalculator(BinaryCalculator binaryCalculator) {
-
-        this.binaryCalculator = binaryCalculator;
-    }
-
-    public HexDecimal getHexDecimal() {
-        return hexDecimal;
-    }
-
-    public void setHexDecimal(HexDecimal hexDecimal) {
-
-        this.hexDecimal = hexDecimal;
-    }
-
-    public double getA() {
-
-        return a;
-    }
-
-    public void setA(double a) {
-
-        this.a = a;
-    }
-
-    @Override
-    public String toString() {
-        return "ScientificCalculator{" +
-                "b=" + b+
-                ", binaryCalculator=" + binaryCalculator +
-                ", hexDecimal=" + hexDecimal +
-                ", a=" + a +
-                '}';
-    }
 
     //calculate methods
     public double sin(double a){
@@ -70,5 +31,6 @@ public class ScientificCalculator extends AdvancedCalculator{
 
         return  Math.log(a);
     }
+
 
 }
