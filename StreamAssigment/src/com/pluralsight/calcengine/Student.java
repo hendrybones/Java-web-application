@@ -1,11 +1,7 @@
 package com.pluralsight.calcengine;
 
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
-
 
 public class Student {
     String regNo;
@@ -52,12 +48,11 @@ public class Student {
         this.dateOfAdmission = dateOfAdmission;
     }
 
-        @Override
+    @Override
     public String toString() {
         return  "" + regNo +
                 "," + gender +
                 "," +new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) +
                 "," + new SimpleDateFormat("dd-MM-yyyy").format(dateOfAdmission);
     }
-
 }
