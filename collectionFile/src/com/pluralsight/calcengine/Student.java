@@ -1,14 +1,10 @@
 package com.pluralsight.calcengine;
 
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
-
-public class Student implements Serializable {
+public class Student  implements Serializable {
     String regNo;
     Gender gender;
     Date dateOfBirth;
@@ -53,12 +49,11 @@ public class Student implements Serializable {
         this.dateOfAdmission = dateOfAdmission;
     }
 
-        @Override
+    @Override
     public String toString() {
         return  "" + regNo +
                 "," + gender +
                 "," +new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) +
                 "," + new SimpleDateFormat("dd-MM-yyyy").format(dateOfAdmission);
     }
-
 }
