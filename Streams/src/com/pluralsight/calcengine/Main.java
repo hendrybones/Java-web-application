@@ -1,7 +1,5 @@
 package com.pluralsight.calcengine;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -80,11 +78,11 @@ public class Main {
         System.out.println("enter your gender (male or female)");
         String gender = scanner.nextLine();
         Gender g = Gender.valueOf(gender);
-        System.out.println("enter date of birth");
+        System.out.println("enter date of birth (dd-MM-yyyy)");
         String date = scanner.nextLine();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date dateOfBirth = simpleDateFormat.parse(date);
-        System.out.println("enter date of Admission ");
+        System.out.println("enter date of Admission  (dd-MM-yyyy)");
         String da = scanner.nextLine();
         SimpleDateFormat DateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date dateOfAdmission = DateFormat.parse(da);
@@ -98,10 +96,12 @@ public class Main {
         int choice = -1;
         Scanner scanner;
         File file = new File("student.txt");
-        Collection<String> list = new ArrayList<String>();
+        Collection<Student> list = new ArrayList<>();
         ObjectOutputStream op = null;
         ObjectInputStream ip = null;
         ListIterator li = null;
+
+        //
 
         System.out.println("Welcome to student registration \n");
         do {
@@ -116,9 +116,28 @@ public class Main {
             scanner.nextLine();
             switch (choice) {
                 case 1:
+                    System.out.println("provide student details below \n");
+                    System.out.println("enter registration number");
+                    String regNo = scanner.next();
+                    System.out.println("enter your gender");
+                    String gender = scanner.next();
+                    Gender g = Gender.valueOf(gender);
+                    System.out.println("enter date of birth (dd-MM-yyyy)");
+                    String date = scanner.next();
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                    Date dateOfBirth = simpleDateFormat.parse(date);
+                    System.out.println("enter date of Admission  (dd-MM-yyyy)");
+                    String da = scanner.next();
+                    SimpleDateFormat DateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                    Date dateOfAdmission = DateFormat.parse(da);
+                    Student s = new Student(regNo, g, dateOfBirth, dateOfAdmission);
+                   list.add(new Student(regNo, g, dateOfBirth, dateOfAdmission));
+                    op = new ObjectOutputStream(new FileOutputStream(file));
+                    op.writeObject(list.toString());
+                    op.close();
 
-                    Student s = getStudentDetails(scanner);
-                    writeToFile(s);
+//                    Student s = getStudentDetails(scanner);
+//                    writeToFile(s);
                     break;
                 case 2:
                     System.out.println("-----------------------------------------");
@@ -267,11 +286,11 @@ public class Main {
                 System.out.println("enter your gender");
                 String gender = scanner.next();
                 Gender g = Gender.valueOf(gender);
-                System.out.println("enter date of birth");
+                System.out.println("enter date of birth (dd-MM-yyyy)");
                 String date = scanner.next();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
                 Date dateOfBirth = simpleDateFormat.parse(date);
-                System.out.println("enter date of Admission ");
+                System.out.println("enter date of Admission (dd-MM-yyyy) ");
                 String da = scanner.next();
                 SimpleDateFormat DateFormat = new SimpleDateFormat("dd-MM-yyyy");
                 Date dateOfAdmission = DateFormat.parse(da);

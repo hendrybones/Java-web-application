@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Student  implements Serializable {
+public class Student  {
     String regNo;
     Gender gender;
     Date dateOfBirth;
