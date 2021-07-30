@@ -100,8 +100,15 @@ public class Main {
         ObjectOutputStream op = null;
         ObjectInputStream ip = null;
         ListIterator li = null;
+/* i still have challenge reading the data in file through this
+        object
 
-        //
+        if (file.isFile()) {
+            ip = new ObjectInputStream(new FileInputStream(file));
+            list = (Collection<Student>)ip.readObject();
+            ip.close();
+        }
+*/
 
         System.out.println("Welcome to student registration \n");
         do {
@@ -116,28 +123,8 @@ public class Main {
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    System.out.println("provide student details below \n");
-                    System.out.println("enter registration number");
-                    String regNo = scanner.next();
-                    System.out.println("enter your gender");
-                    String gender = scanner.next();
-                    Gender g = Gender.valueOf(gender);
-                    System.out.println("enter date of birth (dd-MM-yyyy)");
-                    String date = scanner.next();
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                    Date dateOfBirth = simpleDateFormat.parse(date);
-                    System.out.println("enter date of Admission  (dd-MM-yyyy)");
-                    String da = scanner.next();
-                    SimpleDateFormat DateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                    Date dateOfAdmission = DateFormat.parse(da);
-                    Student s = new Student(regNo, g, dateOfBirth, dateOfAdmission);
-                   list.add(new Student(regNo, g, dateOfBirth, dateOfAdmission));
-                    op = new ObjectOutputStream(new FileOutputStream(file));
-                    op.writeObject(list.toString());
-                    op.close();
-
-//                    Student s = getStudentDetails(scanner);
-//                    writeToFile(s);
+                    Student s = getStudentInfo(scanner, list);
+                    writeToFile(s);
                     break;
                 case 2:
                     System.out.println("-----------------------------------------");
@@ -146,7 +133,7 @@ public class Main {
                     String regNO = scanner.next();
                     System.out.println("------------------------------");
                     Iterator itr = list.iterator();
-//                    while (itr.hasNext())
+//
                     int c;
                     for ( c = 0; c < list.size(); c++)
                     {
@@ -189,8 +176,8 @@ public class Main {
                     for ( i = 0; i < list.size(); i++) {
                         Student stud = (Student) itr.next();
                         if (stud.getRegNo().equals(No))
-
                             System.out.println(stud);
+                        found =true;
                     }
                     System.out.println("-----------------------------------------");
 
@@ -223,7 +210,7 @@ public class Main {
                         System.out.println(a);
                     }
                     System.out.println("-----------------------------------------");
-//                    readStudent();
+//                 readStudent();
                     break;
                 case 5:
                     break;
@@ -233,7 +220,35 @@ public class Main {
 
     }
 
-    private static void writeFile(ArrayList<Student> student) {
+
+    private static Student getStudentInfo(Scanner scanner, Collection<Student> list) throws ParseException {
+        System.out.println("provide student details below \n");
+        System.out.println("enter registration number");
+        String regNo = scanner.next();
+        System.out.println("enter your gender");
+        String gender = scanner.next();
+        Gender g = Gender.valueOf(gender);
+        System.out.println("enter date of birth (dd-MM-yyyy)");
+        String date = scanner.next();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date dateOfBirth = simpleDateFormat.parse(date);
+        System.out.println("enter date of Admission (dd-MM-yyyy) ");
+        String da = scanner.next();
+        SimpleDateFormat DateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date dateOfAdmission = DateFormat.parse(da);
+        Student s = new Student(regNo, g, dateOfBirth, dateOfAdmission);
+        //i have used list add() method to manipulate the data as i work on it
+        list.add(new Student(regNo, g, dateOfBirth, dateOfAdmission));
+/*
+                    op = new ObjectOutputStream(new FileOutputStream(file));
+                    op.writeObject(list.toString());
+                    op.close();
+                    Student s = getStudentDetails(scanner);
+*/
+        return s;
+    }
+
+    private static void writeFile(Collection<Student> student) {
         try {
             BufferedWriter writer=new BufferedWriter(new FileWriter("student.txt"));
             for (Student x: student){
@@ -297,14 +312,15 @@ public class Main {
                 Student s = new Student(regNo, g, dateOfBirth, dateOfAdmission);
 
 
+
                 return s;
             }
 
             private static void writeToFile (Student s) throws IOException {
                 FileOutputStream fileOutputStream = new FileOutputStream("student.txt", true);
                 /* String toWrite="\n" + s.toString(); */
-                for (int i = 0; i < s.toString().length(); i++) {
-                    fileOutputStream.write(s.toString().charAt(i));
+                    for (int i = 0; i < s.toString().length(); i++) {
+                        fileOutputStream.write(s.toString().charAt(i));
 
                 }
                 char newline = '\n';
