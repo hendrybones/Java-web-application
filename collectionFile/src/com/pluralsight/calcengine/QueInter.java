@@ -13,5 +13,10 @@ public class QueInter {
         System.out.println("head:" + q1.element());
         System.out.println("head:" + q1.peek());
         Iterator<String> itr=q1.iterator();
+        while (itr.hasNext()){
+            System.out.println(itr.next());
+        }
+        q1.remove();
+        q1.poll();
     }
 }
