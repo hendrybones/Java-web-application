@@ -222,7 +222,8 @@ public class Main {
 
 
     private static Student getStudentInfo(Scanner scanner, Collection<Student> list) throws ParseException {
-        System.out.println("provide student details below \n");
+
+        System.out.println("provide number of student  \n");
         System.out.println("enter registration number");
         String regNo = scanner.next();
         System.out.println("enter your gender");
@@ -239,13 +240,15 @@ public class Main {
         Student s = new Student(regNo, g, dateOfBirth, dateOfAdmission);
         //i have used list add() method to manipulate the data as i work on it
         list.add(new Student(regNo, g, dateOfBirth, dateOfAdmission));
+
 /*
                     op = new ObjectOutputStream(new FileOutputStream(file));
                     op.writeObject(list.toString());
                     op.close();
                     Student s = getStudentDetails(scanner);
 */
-        return s;
+            return s;
+
     }
 
     private static void writeFile(Collection<Student> student) {
