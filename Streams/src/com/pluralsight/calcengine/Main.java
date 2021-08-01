@@ -109,6 +109,21 @@ public class Main {
             ip.close();
         }
 */
+        FileReader fileReader=new FileReader(file);
+        BufferedReader bufferedReader=new BufferedReader(fileReader);
+        String line;
+        while ((line=bufferedReader.readLine())!=null)
+        {
+            String[] studentData=line.split(",");
+            SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
+            Student s = new Student(studentData[0].trim(),Gender.valueOf(studentData[1].trim()),format.parse(studentData[2].trim()),
+                    format.parse(studentData[3].trim()));
+            list.add(s);
+        }
+        for (Student student: list)
+        {
+            System.out.println(list);
+        }
 
         System.out.println("Welcome to student registration \n");
         do {
@@ -123,8 +138,31 @@ public class Main {
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    Student s = getStudentInfo(scanner, list);
-                    writeToFile(s);
+                    Student s = getStudentDetails(scanner);
+//                    Student s = getStudentInfo(scanner, list);
+
+                    //writing to arraylist from file
+                    list = new ArrayList<Student>();
+                    fileReader = new FileReader(file);
+                    bufferedReader = new BufferedReader(fileReader);
+                    while ((line=bufferedReader.readLine())!=null)
+                    {
+                        String[] studentData=line.split(",");
+                        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
+                        s = new Student(studentData[0].trim(), Gender.valueOf(studentData[1].trim()), format.parse(studentData[2].trim()),
+                                format.parse(studentData[3].trim()));
+                        list.add(s);
+                    }
+                    for (Student student: list)
+                    {
+                        System.out.println(list);
+                    }
+                    //writing to file
+                    op = new ObjectOutputStream(new FileOutputStream(file));
+                    op.writeObject(list.toString());
+                    op.close();
+
+//                    writeToFile(s);
                     break;
                 case 2:
                     System.out.println("-----------------------------------------");
@@ -239,14 +277,7 @@ public class Main {
         Date dateOfAdmission = DateFormat.parse(da);
         Student s = new Student(regNo, g, dateOfBirth, dateOfAdmission);
         //i have used list add() method to manipulate the data as i work on it
-        list.add(new Student(regNo, g, dateOfBirth, dateOfAdmission));
-
-/*
-                    op = new ObjectOutputStream(new FileOutputStream(file));
-                    op.writeObject(list.toString());
-                    op.close();
-                    Student s = getStudentDetails(scanner);
-*/
+//        list.add(new Student(regNo, g, dateOfBirth, dateOfAdmission));
             return s;
 
     }
