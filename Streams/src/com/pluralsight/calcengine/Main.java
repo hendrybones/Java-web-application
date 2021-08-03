@@ -109,6 +109,8 @@ public class Main {
             ip.close();
         }
 */
+/*
+
         FileReader fileReader=new FileReader(file);
         BufferedReader bufferedReader=new BufferedReader(fileReader);
         String line;
@@ -124,6 +126,7 @@ public class Main {
         {
             System.out.println(list);
         }
+*/
 
         System.out.println("Welcome to student registration \n");
         do {
@@ -139,30 +142,11 @@ public class Main {
             switch (choice) {
                 case 1:
                     Student s = getStudentDetails(scanner);
-//                    Student s = getStudentInfo(scanner, list);
+//                    op = new ObjectOutputStream(new FileOutputStream(file));
+//                    op.writeObject(list.toString());
+//                    op.close();
 
-                    //writing to arraylist from file
-                    list = new ArrayList<Student>();
-                    fileReader = new FileReader(file);
-                    bufferedReader = new BufferedReader(fileReader);
-                    while ((line=bufferedReader.readLine())!=null)
-                    {
-                        String[] studentData=line.split(",");
-                        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
-                        s = new Student(studentData[0].trim(), Gender.valueOf(studentData[1].trim()), format.parse(studentData[2].trim()),
-                                format.parse(studentData[3].trim()));
-                        list.add(s);
-                    }
-                    for (Student student: list)
-                    {
-                        System.out.println(list);
-                    }
-                    //writing to file
-                    op = new ObjectOutputStream(new FileOutputStream(file));
-                    op.writeObject(list.toString());
-                    op.close();
-
-//                    writeToFile(s);
+                   writeToFile(s);
                     break;
                 case 2:
                     System.out.println("-----------------------------------------");
@@ -171,7 +155,7 @@ public class Main {
                     String regNO = scanner.next();
                     System.out.println("------------------------------");
                     Iterator itr = list.iterator();
-//
+
                     int c;
                     for ( c = 0; c < list.size(); c++)
                     {
