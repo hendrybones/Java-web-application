@@ -1,12 +1,13 @@
-package com.pluralsight.calcengine;
+package com.pluralsight.calcengine.Question2;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ContactManagerTest {
+    @Test
 
-    @org.junit.jupiter.api.Test
     public void shouldCreateContact(){
         ContactManager contactManager=new ContactManager();
         contactManager.addContact("hendry","mwamburi","91520630");
@@ -14,10 +15,5 @@ class ContactManagerTest {
         Assertions.assertEquals(1,contactManager.getAllContacts().size());
 
     }
-    void addContact() {
-    }
 
-    @org.junit.jupiter.api.Test
-    void getAllContacts() {
-    }
 }
