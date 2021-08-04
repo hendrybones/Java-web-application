@@ -31,6 +31,7 @@ public class Phonebook {
             switch (choice){
                 case 1:
                     userInputs(scanner, scan2, list);
+/*
                         FileOutputStream fileOutputStream = new FileOutputStream("contact.txt", true);
                         list = new ConcurrentHashMap<String, Contacts>();
                     file = new File("fileOne.txt");
@@ -47,6 +48,7 @@ public class Phonebook {
                     for (Contacts x: list){
                         System.out.println(x);
                     }
+*/
 
 
                     break;
