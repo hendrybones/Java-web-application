@@ -9,6 +9,8 @@ public class RevisionQ3 {
         private   String key, value;
 
         public NamePair(String key, String value) {
+            this.key=key;
+            this.value=value;
 
         }
     }

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Anagram {
     public static void main(String args[]) {
-        String phrase1 = "tbeclassroom";
+        String phrase1 = "Hello";
         phrase1 = (phrase1.toLowerCase()).trim();
         char[] phrase1Arr = phrase1.toCharArray();
 
-        String phrase2 = "schoolmaster";
+        String phrase2 = "hello";
         phrase2 = (phrase2.toLowerCase()).trim();
         ArrayList<Character> phrase2ArrList = convertStringToArraylist(phrase2);
 
