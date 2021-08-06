@@ -1,4 +1,4 @@
-package com.pluralsight.calcengine;
+package com.pluralsight.calcengine.NameAndId;
 
 public class NameConvetion  extends Thread{
     public void runO(){

@@ -1,4 +1,6 @@
-package com.pluralsight.calcengine;
+package com.pluralsight.calcengine.RunableAndThreads;
+
+import com.pluralsight.calcengine.RunableAndThreads.ThreadPool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -10,7 +12,9 @@ public class TestThreadPool {
             Runnable worker = new ThreadPool("" + i);
             executor.execute(worker);//calling execute method of ExecutorService
             executor.shutdown();
-            while (!executor.isTerminated()) {   }
+            while (!executor.isTerminated()) {
+
+            }
 
             System.out.println("Finished all threads");
         }

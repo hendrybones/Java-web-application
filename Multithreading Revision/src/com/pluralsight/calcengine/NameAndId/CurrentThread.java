@@ -1,4 +1,4 @@
-package com.pluralsight.calcengine;
+package com.pluralsight.calcengine.NameAndId;
 
 public class CurrentThread extends Thread{
     public void run(){

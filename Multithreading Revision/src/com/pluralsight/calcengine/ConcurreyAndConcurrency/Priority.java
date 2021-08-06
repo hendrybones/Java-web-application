@@ -1,4 +1,4 @@
-package com.pluralsight.calcengine;
+package com.pluralsight.calcengine.ConcurreyAndConcurrency;
 
 public class Priority extends Thread{
     public void run(){
