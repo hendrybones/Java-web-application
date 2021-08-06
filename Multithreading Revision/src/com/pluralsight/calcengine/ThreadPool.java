@@ -11,10 +11,7 @@ public class ThreadPool implements Runnable{
     public void run() {
         System.out.println(Thread.currentThread().getName()+" (Start) message = "+message);
         processmessage();
-        
-
     }
-
     private void processmessage() {
         try {
             Thread.sleep(2000);
