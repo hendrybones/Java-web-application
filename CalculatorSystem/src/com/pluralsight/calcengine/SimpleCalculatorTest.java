@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class SimpleCalculatorTest {
+    SimpleCalculator simpleCalculator=new SimpleCalculator();
 
     @Test
     double add(double v, double v1) {
@@ -15,6 +16,8 @@ class SimpleCalculatorTest {
     }
 
     @Test
-    void multi() {
+    void multi(
+
+    ) {
     }
 }
