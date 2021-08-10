@@ -10,7 +10,9 @@ public class AccountHolder implements Runnable{
 
     @Override
     public void run() {
+        //user make four withdrawal from the account
         for (int i=1;i<=4; i++){
+            //call makeWithdrawal method
             makeWithdrawal(2000);
             if (account.getBalance()<0){
                 System.out.println("account is overdrawn");

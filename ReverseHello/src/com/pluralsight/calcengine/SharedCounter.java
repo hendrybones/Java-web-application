@@ -26,17 +26,6 @@ class SharedDemo implements Runnable {
 
     public class SharedCounter {
         public static void main(String[] args) {
-
-//            ExecutorService executor = Executors.newFixedThreadPool(10);//creating a pool of 5 threads
-//            for (int i = 0; i < 10; i++) {
-//                Runnable task = new SharedDemo(100);
-//                executor.execute(task);//calling execute method of ExecutorService
-//            }
-//            executor.shutdown();
-//            while (!executor.isTerminated()) {
-//            }
-//
-//            System.out.println("Finished all threads");
         }
 
     }

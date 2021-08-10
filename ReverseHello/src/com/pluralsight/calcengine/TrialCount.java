@@ -5,70 +5,36 @@ public class TrialCount {
     static Thread[] threads = new Thread[10];
     public static void main(String[] args)
     {
-        Count c = new Count(10);
+        Count c = new Count();
         for(int i=0;i<10;i++)
         {
             threads[i] = new Thread(c);
             threads[i].start();
+
         }
 
     }
 }
 
 class Count implements Runnable {
-    private final long count;
-            public Count(long count) {
-            this.count=count;
-
-        }
+    private int count=0;
     @Override
     public void run() {
-        long sum = 0;
-            for (long i = 1; i < count; i++) {
-                sum += i;
+        for (int i=0;i<10;i++){
+            synchronized (this){
+                this.count++;
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            System.out.println(sum);
+        }
+        System.out.println(Thread.currentThread().getName()+":" +this.count);
     }
 
 
 }
-//    static Thread[] threads = new Thread[10];
-//
-//    public static void main(String[] args) {
-//
-//        Count c = new Count();
-//        for (int i = 0; i < 10; i++) {
-//            threads[i] = new Thread(c);
-//            threads[i].start();
-//
-////        public void CreateArray () {
-////            Thread[] threads = new Thread[10];
-////            Count c = new Count(10);
-////            for (int i = 0; i < 10; i++) {
-////                threads[i] = new Thread(c);
-////                threads[i].start();
-////
-////            }
-////        }
-//
-//        }
-//    }
-//    static class Count implements Runnable {
-//        private final long count;
-//        public Count(long count) {
-//            this.count=count;
-//
-//        }
-//
-//        @Override
-//        public void run() {
-//            long sum = 0;
-//            for (long i = 1; i < count; i++) {
-//                sum += i;
-//            }
-//            System.out.println(sum);
-//        }
-//    }
-//}
+
 
 
