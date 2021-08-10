@@ -11,27 +11,27 @@ public class ThreadRunnable {
 
 
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
-        for (int i = 0; i < 500; i++) {
-            Runnable task = new RunnableInterface(10000000L + i);
-            executor.execute(task);
-            // This will make the executor accept no new threads
-            // and finish all existing threads in the queue
-            executor.shutdown();
-            // Wait until all threads are finish
-//            executor.awaitTermination();
-            System.out.println("Finished all threads");
-        }
+//        ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
+//        for (int i = 0; i < 500; i++) {
+//            Runnable task = new RunnableInterface(10000000L + i);
+//            executor.execute(task);
+//            // This will make the executor accept no new threads
+//            // and finish all existing threads in the queue
+//            executor.shutdown();
+//            // Wait until all threads are finish
+////            executor.awaitTermination();
+//            System.out.println("Finished all threads");
+//        }
 
 
-//            callingThreadDirectly();
+            callingThreadDirectly();
     }
 
     private static void callingThreadDirectly() {
         // We will store the threads so that we can check if they are done
         List<Thread> threads = new ArrayList<Thread>();
         // We will create 500 threads
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 50; i++) {
             Runnable task = new RunnableInterface(10000000L + i);
             Thread worker = new Thread(task);
             // We can set the name of the thread

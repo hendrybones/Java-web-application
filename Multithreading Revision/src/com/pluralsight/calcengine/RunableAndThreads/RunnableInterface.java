@@ -4,6 +4,7 @@ public class RunnableInterface  implements Runnable{
     private final long count;
 
     public RunnableInterface(long count) {
+
         this.count = count;
     }
 
