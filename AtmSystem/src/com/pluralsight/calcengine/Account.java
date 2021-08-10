@@ -1,7 +1,7 @@
 package com.pluralsight.calcengine;
 
 public class Account {
-    private int balance=6000;
+    private int balance=10000;
 
     public int getBalance(){
         return balance;

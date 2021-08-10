@@ -5,6 +5,7 @@ public class TrialCount {
     static Thread[] threads = new Thread[10];
     public static void main(String[] args)
     {
+        //threads
         Count c = new Count();
         for(int i=0;i<10;i++)
         {
