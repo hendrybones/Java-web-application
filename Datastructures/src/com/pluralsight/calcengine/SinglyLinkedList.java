@@ -11,6 +11,45 @@ public class SinglyLinkedList {
             this.next = null;
         }
     }
+    public ListNode deleteFirst(){
+        if(head==null){
+            return null;
+        }
+        ListNode temp=head;
+        head=head.next;
+        temp.next=null;
+        return temp;
+    }
+    public void delete(int position){
+        if(position==1){
+            head=head.next;
+        }else
+        {
+            ListNode previous=head;
+            int count =1;
+            while (count<position-1){
+                previous=previous.next;
+                count++;
+            }
+            ListNode current=previous.next;
+            previous.next=current.next;
+        }
+    }
+    public ListNode deleteLast(){
+        if (head==null || head.next==null)
+        {
+            return head;
+        }
+        ListNode current=head;
+        ListNode previous=null;
+        while (current.next !=null){
+            previous=current;
+            current=current.next;
+        }
+        previous.next=null;
+        return current;
+
+    }
     public void display(){
         ListNode current=head;
         while (current !=null){
@@ -78,11 +117,20 @@ public class SinglyLinkedList {
 //        sl.head.next=second;
 //        second.next=third;
 //        third.next=fourth;
-        sl.insertLast(11);
-        sl.insertLast(8);
-        sl.insertLast(1);
+//        sl.insertLast(11);
+//        sl.insertLast(8);
+//        sl.insertLast(1);
+
+        sl.insert(1,3);
+        sl.insert(2,5);
+        sl.insert(2,4);
+        sl.insert(1,6);
+        sl.delete(1);
+        sl.delete(2);
         sl.display();
-        System.out.println("length"+ ""+sl.length());
+//        System.out.println("length"+ ""+sl.length());
+//        System.out.println(sl.deleteLast().data);
+
     }
 
 }
