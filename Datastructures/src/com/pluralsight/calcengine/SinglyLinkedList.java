@@ -106,6 +106,20 @@ public class SinglyLinkedList {
         current.next=newNode;
 
     }
+    public boolean find(ListNode head,int searKey){
+        if (head==null){
+            return false;
+        }
+        ListNode current =head;
+        while (current!=null){
+            if (current.data==searKey){
+                return true;
+            }
+            current=current.next;
+        }
+        return false;
+
+    }
     public static void main(String[] args){
         SinglyLinkedList sl=new SinglyLinkedList();
 //        sl.head=new ListNode(10);

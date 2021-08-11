@@ -9,7 +9,7 @@ public class MaxValue {
     public  MaxValue(){
         this.createArray();
     }
-
+//that generate random number
     public void createArray() {
         a = new int[10000];
         for (int i = 0; i < a.length; i++) {
@@ -17,7 +17,20 @@ public class MaxValue {
             a[i] = value;
         }
 
+    }
+    public  void serialProcessing(){
+        long startTime = System.nanoTime();
+        int maxValue = Integer.MIN_VALUE;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > maxValue)
+                maxValue = a[i];
+        }
+        long endTime = System.nanoTime();
+        System.out.println("single processing: Max Value: " + maxValue + ", Time: " + (endTime - startTime));
 
+    }
+    public void ParallelProcessing() throws InterruptedException {
+        this.execute();
     }
     public void execute() throws InterruptedException {
         long startTime = System.nanoTime();
@@ -34,7 +47,7 @@ public class MaxValue {
         for (int k = 0; k < threads.length; k ++)
             threads[k].join();
         long endTime = System.nanoTime();
-        System.out.println("Execute: Max Value: " + maxValue + ", Time: " + (endTime - startTime));
+        System.out.println("parallel processing: Max Value: " + maxValue + ", Time: " + (endTime - startTime));
     }
 
     public void executeSplit() throws InterruptedException {
