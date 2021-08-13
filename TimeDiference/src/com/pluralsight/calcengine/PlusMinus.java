@@ -4,6 +4,7 @@ import javax.xml.transform.Result;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +28,11 @@ public class PlusMinus {
         System.out.println((float)positiveCount/arr.size());
         System.out.println((float)zeroCount/arr.size());
         System.out.println((float)negativeCount/arr.size());
+        DecimalFormat decimalFormat=new DecimalFormat("");
 
     }
     public static void main(String[] args) throws IOException {
+        PlusMinus result=new PlusMinus();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(bufferedReader.readLine().trim());
@@ -43,7 +46,7 @@ public class PlusMinus {
             arr.add(arrItem);
         }
 
-        Result.plusMinus(arr);
+        result.plusMinus(arr);
 
         bufferedReader.close();
     }
