@@ -3,7 +3,7 @@ package com.pluralsight.calcengine;
 import java.util.*;
 
 public class MissinNumber {
-    public static int[] Numbers(int[] arr1, int[] arr2) {
+    public static String Numbers(int[] arr1, int[] arr2) {
         Map<Integer, Integer> map1 = new HashMap<>();
         Map<Integer, Integer> map2 = new HashMap<>();
         for (int i = 0; i < arr1.length; i++) {
@@ -35,9 +35,9 @@ public class MissinNumber {
             for (int i = 0; i < list.size(); i++) {
                 result[i] = list.get(i);
             }
-            return result;
+            return result[0]+" "+ result[1]+ " "+ result[2];
         }
 
-        return arr1;
+        return arr1[0]+" "+arr1[1]+" " +arr1[2];
     }
 }

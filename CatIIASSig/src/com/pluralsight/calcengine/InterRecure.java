@@ -20,8 +20,7 @@ public class InterRecure {
                 n = n / 10;
                 return superSingleDigit(num);
             }
-        }
-        return 0;
+        }return n;
 
     }
 }
