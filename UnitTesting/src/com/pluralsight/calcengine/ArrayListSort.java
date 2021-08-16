@@ -1,17 +1,16 @@
 package com.pluralsight.calcengine;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ArrayListSort {
 
-    public  static ArrayList<Integer> Array(){
-        ArrayList<Integer> list=new ArrayList<>();
-        list.add(10);
-        list.add(20);
-        list.add(50);
-        list.add(30);
-        list.add(40);
+    public  static List<Integer> Array(List<Integer> list){
+//        list.add(10);
+//        list.add(20);
+//        list.add(50);
+//        list.add(30);
+//        list.add(40);
 
 //        list.forEach(s->{
 //            System.out.println(s);
@@ -26,7 +25,7 @@ public class ArrayListSort {
         }
         return list;
     }
-    public static void main(String[] args){
-        Array();
-    }
+//    public static void main(String[] args){
+//        Array();
+//    }
 }

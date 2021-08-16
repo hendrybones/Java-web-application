@@ -15,11 +15,14 @@ class SortByComparatorTest {
         ArrayList<Song> musicList=new ArrayList<>();
         musicList.add(new Song("hendry","mwamburi",2019));
         musicList.add(new Song("ben","jame",2009));
-        musicList.add(new Song("abel","john",2020));
-        musicList.add(new Song("chris","mark",202021));
         SortByComparator sortByComparator=new SortByComparator();
-         Collections.sort(musicList,sortByComparator);
-        Assertions.assertEquals(musicList,new SortByComparator().compare());
+        Collections.sort(musicList,sortByComparator);
+
+        ArrayList<Song> musicList2=new ArrayList<>();
+        musicList2.add(new Song("ben","jame",2009));
+        musicList2.add(new Song("hendry","mwamburi",2019));
+       Assertions.assertEquals(musicList2,new SongApp().musicApp(musicList));
+
     }
 
 }

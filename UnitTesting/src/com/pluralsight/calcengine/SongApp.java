@@ -2,9 +2,21 @@ package com.pluralsight.calcengine;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class SongApp {
+    public static ArrayList<Song> musicApp(ArrayList<Song> musicList){
+        Myutils.iterateList(musicList);
+//        Collections.sort(musicList);
+        SortByComparator sortByComparator=new SortByComparator();
+//        Collections.sort(musicList,sortByComparator);
+        Collections.sort(musicList,sortByComparator);
+        System.out.println("after sorting");
+        Myutils.iterateList(musicList);
+        return musicList;
+
+
+
+    }
 
     public static void main(String[] args){
         ArrayList<Song> musicList=new ArrayList<>();
@@ -15,6 +27,7 @@ public class SongApp {
         Myutils.iterateList(musicList);
 //        Collections.sort(musicList);
         SortByComparator sortByComparator=new SortByComparator();
+//        Collections.sort(musicList,sortByComparator);
         Collections.sort(musicList,sortByComparator);
         System.out.println("after sorting");
         Myutils.iterateList(musicList);

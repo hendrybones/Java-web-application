@@ -19,7 +19,13 @@ class ArrayListSortTest {
         list.add(50);
         list.add(30);
         list.add(40);
-//        ?\Assertions.assertEquals("[10, 20, 30, 40, 50]", Arrays.toString(new ArrayListSort().Array()));
+        ArrayList<Integer> output=new ArrayList<>();
+        output.add(10);
+        output.add(20);
+        output.add(30);
+        output.add(40);
+        output.add(50);
+        Assertions.assertEquals(output,new ArrayListSort().Array(list));
 
     }
 
