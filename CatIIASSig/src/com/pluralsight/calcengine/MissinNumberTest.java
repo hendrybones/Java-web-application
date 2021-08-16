@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,7 +18,7 @@ class MissinNumberTest {
         int[]b=new int[]{203,204,205,206,207,205,208,203,206,205,206,204};
         int[]outPut=new int[]{204,205,206};
 
-        Assertions.assertEquals("204 205 206",new MissinNumber().Numbers(a,b));
+        Assertions.assertEquals(Arrays.toString(outPut),new MissinNumber().Numbers(a,b));
 
 
 

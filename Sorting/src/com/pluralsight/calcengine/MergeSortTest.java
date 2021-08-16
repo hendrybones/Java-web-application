@@ -7,14 +7,13 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SolutionTest {
+class MergeSortTest {
     @Test
     public void merge(){
-        int[]a =new int[]{3,4,5,6,8,7};
-//        Assertions.assertEquals("[3, 4, 5, 6, 7, 8]", Arrays.toString(new Solution.mergeHalve(a,0,a.length-1)));
+        int[]a=new int[]{20,30,10,9,39,};
+        int[]b=new int[]{9,10,20,30,39};
 
-
-
+        Assertions.assertEquals("[9, 10, 20, 30, 39]", Arrays.toString(new MergeSort().mergerArray(a)));
     }
 
 }

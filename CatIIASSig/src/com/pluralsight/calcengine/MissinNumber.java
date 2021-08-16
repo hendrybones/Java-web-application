@@ -22,6 +22,7 @@ public class MissinNumber {
             }
         }
         List<Integer> list = new ArrayList<Integer>();
+        int[] result = new int[0];
         for (int element : map2.keySet()) {
             if (map2.containsKey(element)) {
                 if (map2.get(element) > map1.get(element)) {
@@ -31,13 +32,16 @@ public class MissinNumber {
                 }
             }
             Collections.sort(list);
-            int[] result = new int[list.size()];
+            result = new int[list.size()];
             for (int i = 0; i < list.size(); i++) {
                 result[i] = list.get(i);
             }
-            return result[0]+" "+ result[1]+ " "+ result[2];
+//            return result[0]+" "+ result[1]+ " "+ result[2];
         }
+        String x = Arrays.toString(result);
+        System.out.print(x);
+        return x;
 
-        return arr1[0]+" "+arr1[1]+" " +arr1[2];
+//        return arr1[0] + " " + arr1[1] + " " + arr1[2];
     }
 }
