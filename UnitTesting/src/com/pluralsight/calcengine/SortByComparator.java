@@ -11,6 +11,6 @@ public class SortByComparator implements Comparator<Song> {
         if (firstSong.getYear()<anotherSong.getYear()){
             return -1;
         }
-        return 0;
+        return firstSong.getYear().compareTo(anotherSong.getYear());
     }
 }

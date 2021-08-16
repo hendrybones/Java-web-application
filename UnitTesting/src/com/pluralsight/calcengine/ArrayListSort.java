@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class ArrayListSort {
 
-    public  static void Array(){
+    public  static ArrayList<Integer> Array(){
         ArrayList<Integer> list=new ArrayList<>();
         list.add(10);
         list.add(20);
@@ -24,6 +24,7 @@ public class ArrayListSort {
         for (Integer temp:list){
             System.out.println(temp);
         }
+        return list;
     }
     public static void main(String[] args){
         Array();

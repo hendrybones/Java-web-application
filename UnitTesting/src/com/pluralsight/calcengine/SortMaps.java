@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SortMaps {
-    public void Numbers(Map<Integer, String> map){
+    public Map Numbers(Map<Integer, String> map){
         map = new HashMap();
         map.put(10,"hendry");
         map.put(20,"anthony");
@@ -14,6 +14,7 @@ public class SortMaps {
 
         System.out.println("original map");
         map.forEach((k,v)->System.out.println(k+"\t"+v));
+        return map;
 
     }
 }

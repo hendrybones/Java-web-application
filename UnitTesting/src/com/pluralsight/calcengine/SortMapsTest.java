@@ -15,7 +15,7 @@ class SortMapsTest {
         map.put(10,"hendry");
         map.put(20,"anthony");
         map.put(30,"ben");
-//       Assertions.assertEquals(new SortMapsTest());
+      Assertions.assertEquals(new SortMaps().Numbers(Map<Integer>map));
     }
 
 }
