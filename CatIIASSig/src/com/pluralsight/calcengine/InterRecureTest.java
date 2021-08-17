@@ -9,11 +9,7 @@ class InterRecureTest {
 
     @Test
     public void recurse(){
-        InterRecure interRecure=new InterRecure();
-        int k=3;
-        String n="148";
-
-     Assertions.assertEquals(3,new InterRecure().SuperDigit(n,k));
+     Assertions.assertEquals(3,new InterRecure().SuperDigit("148",4));
 
 
 
