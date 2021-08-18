@@ -19,5 +19,21 @@ class MainTest {
       assertEquals(2,new Main().StringCheck("catcowcat","cat"));
 
     }
+    @Test
+    public  void triangle(){
+        assertEquals(0,new Main().triangle(0));
+        assertEquals(1,new Main().triangle(1));
+        assertEquals(2,new Main().triangle(3));
+    }
+    @Test
+    public void parent(){
+        assertEquals("(abc)",new Main().parent("xyz(abc)123","(abc)"));
+        assertEquals("(hello)",new Main().parent("x(hello)","(hello)"));
+        assertEquals("(xy)",new Main().parent("(xy)1","(xy)"));
+    }
+    @Test
+    public void strCount(){
+        assertEquals("hel*lo",new Main().StrCount("hello"));
+    }
 
 }
