@@ -16,5 +16,14 @@ class MainTest {
     public void missingCha(){
         Assertions.assertEquals("ktten",new Main().missingChar("kitten", 1));
     }
+    @Test
+    public void front(){
+        Assertions.assertEquals("eodc",new Main().frontEnd("code"));
+
+    }
+    @Test
+    public  void font3(){
+        Assertions.assertEquals("JavaJavaJava",new Main().font3("java"));
+    }
 
 }
